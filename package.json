@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-geojsonhint",     "homepage": "https://github.com/npmtest/node-npmtest-geojsonhint",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-geojsonhint.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  geojsonhint (v2.0.0)  [![npm package](https://img.shields.io/npm/v/npmtest-geojsonhint.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-geojsonhint) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-geojsonhint.svg)](https://travis-ci.org/npmtest/node-npmtest-geojsonhint)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-geojsonhint",
+    "keywords": [
+        "coverage",
+        "test",
+        "geojsonhint"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_geojsonhint.js",
+    "name": "npmtest-geojsonhint",
+    "nameAlias": "npmtest_geojsonhint",
+    "nameOriginal": "npmtest-geojsonhint",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-geojsonhint.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
